@@ -73,3 +73,9 @@ body {
 .carousel-caption {
   padding-bottom: 70px;
 }
+
+#carouselButtons {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
