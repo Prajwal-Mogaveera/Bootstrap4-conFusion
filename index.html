@@ -38,7 +38,7 @@
             </li>
           </ul>
           <span class="navbar-text">
-            <a data-toggle="modal" data-target="#loginModal"> <span class="fa fa-sign-in"></span>Login </a>
+            <a id="login-button"> <span class="fa fa-sign-in"></span>Login </a>
           </span>
         </div>
       </div>
@@ -50,7 +50,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h4 class="modal-title">Login</h4>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <button type="button" class="close" >&times;</button>
           </div>
           <div class="modal-body">
             <form>
@@ -80,12 +80,14 @@
       </div>
     </div>
 
+    
+
     <div id="reserveModal" class="modal fade" role="dialog">
       <div class="modal-dialog modal-lg" role="content">
         <div class="modal-content">
           <div class="modal-header">
             <h3 class="modal-title">Reserve a Table</h3>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <button type="button" class="close" >&times;</button>
           </div>
           <div class="modal-body">
             <div class="col"></div>
@@ -163,7 +165,7 @@
                 <img src="img/logo.png" class="img-fluid" alt="logo" />
               </div>
               <div class="col-12 col-sm-6 align-self-center">
-                <a data-toggle="modal" data-target="#reserveModal" class="btn btn-warning btn-block btn-sm" role="button"> Reserve Table </a>
+                <a id="reserve-button"  class="btn btn-warning btn-block btn-sm" role="button"> Reserve Table </a>
               </div>
             </div>
           </div>
@@ -404,6 +406,26 @@
         //   $('#mycarousel').carousel('cycle');
         // });
       });
+    </script>
+    <script>
+      $(document).ready(function(){
+        $("#reserve-button").click(function() {
+          $("#reserveModal").modal('show');
+        })
+
+        $(".close").click(function() {
+          $("#reserveModal").modal('hide');
+          $("#loginModal").modal('hide')
+        })
+
+        $("#login-button").click(function() {
+          $("#loginModal").modal('show')
+        })
+
+        // $(".close").click(function() {
+        //   $("#loginModal").modal('hide')
+        // })
+      })
     </script>
   </body>
 </html>
